@@ -7,6 +7,7 @@ import { Dashboard } from "./components/shared/Dashboard";
 import LoginPage from './components/shared/LoginPage';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import { AuthProvider } from './AuthContext';
+import { DetectionResult } from './components/shared/report/DetectionResult';
 
 
 function App() {
@@ -24,6 +25,11 @@ function App() {
               <Route
                 path="Dashboard"
                 element={<ProtectedRoute element={<Dashboard />} roles={['admin', 'salesrep','manager']} />}
+              />
+
+              <Route
+                path="DetectionResult"
+                element={<ProtectedRoute element={<DetectionResult />} roles={['admin', 'salesrep','manager']} />}
               />
               
             </Route>
